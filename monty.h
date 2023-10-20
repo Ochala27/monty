@@ -62,11 +62,19 @@ stack_t *DEL_DNODEint(stack_t **head);
 void op_div(stack_t **stack, unsigned int line_number);
 
 char *_strdup(char *str);
+void free_stack(stack_t **stack);
+void free_arr(char **array);
+void all_freer(void);
 
 globs_t glob;
 void INTERPRETER(instruction_t ops_array[], char **all_lines);
 
+void ERROR_NOT_FOUND(char **all_lines, int idx, char *commands);
+void ERROR_ALLLINES(char **ALLLINES1);
+void err_malloc(void);
+void ERROR_FILE(char *argv);
 
+char **READ_LINES(char *argv);
 
 
 #endif

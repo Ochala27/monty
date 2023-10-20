@@ -23,7 +23,7 @@ void ERROR_NOT_FOUND(char **all_lines, int idx, char *commands)
 void ERROR_ALLLINES(char **ALLLINES1)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	free_arr(alllines1);
+	free_arr(ALLLINES1);
 	exit(EXIT_FAILURE);
 }
 

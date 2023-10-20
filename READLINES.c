@@ -6,7 +6,7 @@
  * Return: An array of all lines
  */
 
-char **READ_LINES(char *argv);
+char **READ_LINES(char *argv)
 {
 	FILE *fileopen;
 	size_t buffsize = 1;

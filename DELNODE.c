@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * DEL_DNODEint - Deletes a node at the top
+ * del_dnodeint_end - Deletes a node at the top
  * of the stack - the end of the list
  * @head: Double pointer to the head node
  * Return: NULL or new address
  */
 
-stack_t *DEL_DNODEint(stack_t **head)
+stack_t *del_dnodeint_end(stack_t **head)
 {
 	stack_t *lastNode = NULL;
 	stack_t *current = *head;

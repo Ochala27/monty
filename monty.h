@@ -68,28 +68,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int _atoi(char *s);
-stack_t *TRAVERSE(stack_t *stack);
-stack_t *DEL_DNODEint(stack_t **head);
-stack_t *add_dnodeint_end(stack_t **head, const int n);
-
-
-void op_div(stack_t **stack, unsigned int line_number);
-
-char *_strdup(char *str);
-void free_stack(stack_t **stack);
-void free_arr(char **array);
-void all_freer(void);
-
-globs_t glob;
-void INTERPRETER(instruction_t ops_array[], char **all_lines);
-
-void ERROR_NOT_FOUND(char **all_lines, int idx, char *commands);
-void ERROR_ALLLINES(char **ALLLINES1);
-void err_malloc(void);
-void ERROR_FILE(char *argv);
-
-char **READ_LINES(char *argv);
+/*ARRAY OF ALL THE LINES */
+char **read_lines(char *argv);
 
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
@@ -103,4 +83,23 @@ void op_mul(stack_t **stack, unsigned int line_number);
 void op_mod(stack_t **stack, unsigned int line_number);
 void op_div(stack_t **stack, unsigned int line_number);
 
-#endif
+globs_t glob;
+void Interpreter(instruction_t ops_array[], char **all_lines);
+/*Utilities - Convert alphabet to integer*/
+int _atoi(char *s);
+stack_t *TRAVERSE(stack_t *stack);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+stack_t *del_dnodeint_end(stack_t **head);
+
+char *_strdup(char *str);
+void free_stack(stack_t **stack);
+void free_arr(char **array);
+void all_freer(void);
+
+/*ERROR MESSAGES*/
+void error_not_found(char **all_lines, int idx, char *commands);
+void err_alllines(char **alllines1);
+void err_malloc(void);
+void error_file(char *argv);
+
+#endif /*MONTY_H*/

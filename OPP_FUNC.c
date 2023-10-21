@@ -39,7 +39,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
 		all_freer();
 		exit(EXIT_FAILURE);
 	}
-	DEL_DNODEint(stack);
+	del_dnodeint_end(stack);
 }
 
 /**

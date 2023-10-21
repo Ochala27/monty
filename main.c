@@ -28,11 +28,11 @@ int main(int argc, char **argv)
 	}
 
 	glob.TOS1 = -99;
-	all_lines = READ_LINES(argv[1]);
+	all_lines = read_lines(argv[1]);
 	glob.all_lines = all_lines;
 
 	/*LINES NOW IN THE ARRAY*/
-	INTERPRETER(ops_array, all_lines);
+	Interpreter(ops_array, all_lines);
 
 	return (0);
 }

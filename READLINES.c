@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * READ_LINES - Read all lines from file
+ * read_lines - Reads all lines from file
  * @argv: Name of file from command line
  * Return: An array of all lines
  */
 
-char **READ_LINES(char *argv)
+char **read_lines(char *argv)
 {
 	FILE *fileopen;
 	size_t buffsize = 1;
@@ -16,7 +16,7 @@ char **READ_LINES(char *argv)
 
 	fileopen = fopen(argv, "r");
 	if (fileopen == NULL)
-		ERROR_FILE(argv);
+		error_file(argv);
 
 	while (getline(&buffer, &buffsize, fileopen) != -1)
 		len++;

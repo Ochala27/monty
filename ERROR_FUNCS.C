@@ -1,14 +1,14 @@
 #include "monty.h"
 
 /**
- * ERROR_NOT_FOUND - print command not found
+ * error_not_found - Print Command not found
  * @all_lines:lines array to free
  * @idx:line number
  * @commands: command not found
  */
 
-void ERROR_NOT_FOUND(char **all_lines, int idx, char *commands)
-	{
+void error_not_found(char **all_lines, int idx, char *commands)
+{
 	printf("L%d: unknown instruction %s\n", idx, commands);
 	free_arr(all_lines);
 	free_stack(&(glob.stack));
@@ -16,14 +16,14 @@ void ERROR_NOT_FOUND(char **all_lines, int idx, char *commands)
 }
 
 /**
- * ERROR_ALLLINES - prints error and frees all lines
- * @ALLLINES1: Argument to array to free
- * Return: void
+ * err_alllines - Prints error and frees all lines
+ * @alllines1: Argument to array to free
+ * Return: Void
  */
-void ERROR_ALLLINES(char **ALLLINES1)
+void err_alllines(char **alllines1)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	free_arr(ALLLINES1);
+	free_arr(alllines1);
 	exit(EXIT_FAILURE);
 }
 
@@ -36,14 +36,13 @@ void err_malloc(void)
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
-
 /**
- * ERROR_FILE - prints error and frees all lines
+ * error_file - Prints error and frees all lines
  * @argv: File name
- * Return: void
+ * Return: Void
  */
 
-void ERROR_FILE(char *argv)
+void error_file(char *argv)
 {
 	fprintf(stderr, "Error: Can't open file %s\n", argv);
 	exit(EXIT_FAILURE);

@@ -34,7 +34,7 @@ void op_add(stack_t **stack, unsigned int line_number)
 
 	value = (curr->prev->n + curr->n);
 	curr->prev->n = value;
-	DEL_DNODEint(stack);
+	del_dnodeint_end(stack);
 }
 
 /**
@@ -60,7 +60,7 @@ void op_sub(stack_t **stack, unsigned int line_number)
 
 	value = (curr->prev->n - curr->n);
 	curr->prev->n = value;
-	DEL_DNODEint(stack);
+	del_dnodeint_end(stack);
 }
 
 /**
@@ -86,7 +86,7 @@ void op_mul(stack_t **stack, unsigned int line_number)
 
 	value = (curr->prev->n * curr->n);
 	curr->prev->n = value;
-	DEL_DNODEint(stack);
+	del_dnodeint_end(stack);
 }
 
 /**
@@ -112,5 +112,5 @@ void op_mod(stack_t **stack, unsigned int line_number)
 
 	value = (curr->prev->n % curr->n);
 	curr->prev->n = value;
-	DEL_DNODEint(stack);
+	del_dnodeint_end(stack);
 }

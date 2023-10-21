@@ -7,13 +7,13 @@
 void free_arr(char **array)
 {
 	int i = 0;
-	
-	while (array[i] != NULL)
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
+
+while (array[i] != NULL)
+{
+	free(array[i]);
+	i++;
+}
+free(array);
 }
 
 /**
@@ -23,7 +23,7 @@ void free_arr(char **array)
 void free_stack(stack_t **stack)
 {
 	stack_t *temp = NULL;
-	
+
 	while (*stack != NULL)
 	{
 		temp = (*stack)->next;

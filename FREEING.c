@@ -6,14 +6,14 @@
  */
 void free_arr(char **array)
 {
-    int i = 0;
-
-    while (array[i] != NULL)
-    {
-        free(array[i]);
-        i++;
-    }
-    free(array);
+	int i = 0;
+	
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
 /**
@@ -22,14 +22,14 @@ void free_arr(char **array)
  */
 void free_stack(stack_t **stack)
 {
-    stack_t *temp = NULL;
-
-    while (*stack != NULL)
-    {
-        temp = (*stack)->next;
-        free(*stack);
-        *stack = temp;
-    }
+	stack_t *temp = NULL;
+	
+	while (*stack != NULL)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
 }
 
 /**
@@ -37,15 +37,14 @@ void free_stack(stack_t **stack)
  */
 void all_freer(void)
 {
-    if (glob.all_lines != NULL)
-    {
-        free_arr(glob.all_lines);
-        glob.all_lines = NULL;
-    }
-
-    if (glob.stack != NULL)
-    {
-        free_stack(&(glob.stack));
-        glob.stack = NULL;
-    }
+	if (glob.all_lines != NULL)
+	{
+		free_arr(glob.all_lines);
+		glob.all_lines = NULL;
+	}
+	if (glob.stack != NULL)
+	{
+		free_stack(&(glob.stack));
+		glob.stack = NULL;
+	}
 }

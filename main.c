@@ -1,38 +1,29 @@
 #include "monty.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+char **op_toks = NULL;
 
 /**
- * main - Entry Point for the program
- * @argc: Command line argument counter
- * @argv: Array of commandline arguments
- * Return: Always 0 or something
+ * main - the entry point for Monty Interp
+ *
+ * @argc: the count of arguments passed to the program
+ * @argv: pointer to an array of char pointers to arguments
+ *
+ * Return: (EXIT_SUCCESS) on success (EXIT_FAILURE) on error
  */
-
 int main(int argc, char **argv)
 {
-	char **all_lines = NULL;
-
-	instruction_t ops_array[] = {
-		{"push", op_push},
-		{"pop", op_pop},
-		{"pall", op_pall},
-		{"pint", op_pint},
-		{"swap", op_swap},
-		{"add", op_add},
-		{"nop", op_nop},
-		{NULL, NULL}};
+	FILE *script_fd = NULL;
+	int exit_code = EXIT_SUCCESS;
 
 	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
-
-	glob.TOS1 = -99;
-	all_lines = read_lines(argv[1]);
-	glob.all_lines = all_lines;
-
-	/*LINES NOW IN THE ARRAY*/
-	Interpreter(ops_array, all_lines);
-
-	return (0);
+		return (usage_error());
+	script_fd = fopen(argv[1], "r");
+	if (script_fd == NULL)
+		return (f_open_error(argv[1]));
+	exit_code = run_monty(script_fd);
+	fclose(script_fd);
+	return (exit_code);
 }

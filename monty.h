@@ -49,26 +49,26 @@ int check_mode(stack_t *stack);
 void free_tokens(void);
 unsigned int token_arr_len(void);
 int run_monty(FILE *script_fd);
-void SET_op_tok_error(int error_code);
+void set_op_tok_error(int error_code);
 
 /* OPCODE FUNCTIONS */
-void Monty_push(stack_t **stack, unsigned int line_number);
-void Monty_pall(stack_t **stack, unsigned int line_number);
-void Monty_pint(stack_t **stack, unsigned int line_number);
-void Monty_pop(stack_t **stack, unsigned int line_number);
-void Monty_swap(stack_t **stack, unsigned int line_number);
-void Monty_add(stack_t **stack, unsigned int line_number);
-void Monty_nop(stack_t **stack, unsigned int line_number);
-void Monty_sub(stack_t **stack, unsigned int line_number);
-void Monty_div(stack_t **stack, unsigned int line_number);
-void Monty_mul(stack_t **stack, unsigned int line_number);
-void Monty_mod(stack_t **stack, unsigned int line_number);
-void Monty_pchar(stack_t **stack, unsigned int line_number);
-void Monty_pstr(stack_t **stack, unsigned int line_number);
-void Monty_rotl(stack_t **stack, unsigned int line_number);
-void Monty_rotr(stack_t **stack, unsigned int line_number);
-void Monty_stack(stack_t **stack, unsigned int line_number);
-void Monty_queue(stack_t **stack, unsigned int line_number);
+void monty_push(stack_t **stack, unsigned int line_number);
+void monty_pall(stack_t **stack, unsigned int line_number);
+void monty_pint(stack_t **stack, unsigned int line_number);
+void monty_pop(stack_t **stack, unsigned int line_number);
+void monty_swap(stack_t **stack, unsigned int line_number);
+void monty_add(stack_t **stack, unsigned int line_number);
+void monty_nop(stack_t **stack, unsigned int line_number);
+void monty_sub(stack_t **stack, unsigned int line_number);
+void monty_div(stack_t **stack, unsigned int line_number);
+void monty_mul(stack_t **stack, unsigned int line_number);
+void monty_mod(stack_t **stack, unsigned int line_number);
+void monty_pchar(stack_t **stack, unsigned int line_number);
+void monty_pstr(stack_t **stack, unsigned int line_number);
+void monty_rotl(stack_t **stack, unsigned int line_number);
+void monty_rotr(stack_t **stack, unsigned int line_number);
+void monty_stack(stack_t **stack, unsigned int line_number);
+void monty_queue(stack_t **stack, unsigned int line_number);
 
 /* CUSTOM STANDARD LIBRARY FUNCTIONS */
 char **strtow(char *str, char *delims);
